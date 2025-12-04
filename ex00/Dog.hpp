@@ -1,5 +1,5 @@
-#ifndef DOG_HPP_
-# define DOG_HPP_
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include "Animal.hpp"
 
@@ -11,6 +11,6 @@ class Dog : public Animal
 	Dog(const Dog& other);
 	Dog& operator=(const Dog&other);
 
-	void makeSound();
+	void makeSound() const;
 };
-#endif // !DOG_HPP_
+#endif // !DOG_HPP

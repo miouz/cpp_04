@@ -15,6 +15,10 @@ class Animal
 	Animal& operator=(const Animal&other);
 	~Animal();
 
-	void makeSound(void);
+	//getter and setter
+	const std::string& getType() const;
+	void setType(const std::string& type);
+
+	 virtual void makeSound(void) const;
 };
 #endif // !ANIMAL_HPP_

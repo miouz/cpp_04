@@ -33,7 +33,18 @@ Animal::~Animal()
 	std::cout << "Animal destructor called\n";
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
 	std::cout << "Animal's makeSound func called\n";
+}
+
+
+const std::string& Animal::getType() const
+{
+	return this->type_;
+}
+
+void Animal::setType(const std::string& type)
+{
+	this->type_ = type;
 }
