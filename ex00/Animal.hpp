@@ -14,5 +14,7 @@ class Animal
 	Animal(const Animal& other);
 	Animal& operator=(const Animal&other);
 	~Animal();
+
+	void makeSound(void);
 };
 #endif // !ANIMAL_HPP_
