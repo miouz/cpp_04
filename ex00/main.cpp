@@ -23,10 +23,10 @@ int main()
 	wrongMeta->makeSound(); //will output the cat sound!
 	wrongCat->makeSound();
 
-	// delete meta;
-	// delete j;
-	// delete i;
-	// delete wrongMeta;
-	// delete wrongCat;
+	delete meta;
+	delete j;
+	delete i;
+	delete wrongMeta;
+	delete wrongCat;
 	return 0;
 }
