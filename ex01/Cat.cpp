@@ -6,11 +6,13 @@ Cat::Cat():
 	Animal("Cat")
 {
 	std::cout << "Cat default constructor called\n";
+	brain_ = new Brain;
 }
 
 Cat::~Cat()
 {
 	std::cout << "Cat destructor called\n";
+	delete brain_;
 }
 
 Cat::Cat(const Cat& other):
@@ -18,12 +20,14 @@ Cat::Cat(const Cat& other):
 {
 	std::cout << "Cat copy constructor called\n";
 	type_ = other.type_;
+	*brain_ = *(other.brain_);
 }
 Cat& Cat::operator=(const Cat&other)
 {
 	if (this == &other)
 		return (*this);
 	type_ = other.type_;
+	*brain_ = *(other.brain_);
 	return (*this);
 }
 
