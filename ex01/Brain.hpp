@@ -15,6 +15,7 @@ class	Brain
 
 	void setIdeas(const std::string& idea, const int index);
 	std::string getIdeas(int)const;
+	void displayIdeas() const;
 };
 
 #endif // !BRAIN_HPP_
