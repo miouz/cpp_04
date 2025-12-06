@@ -12,6 +12,9 @@ class	Brain
 	~Brain();
 	Brain(const Brain& other);
 	Brain& operator=(const Brain& other);
+
+	void setIdeas(const std::string& idea, const int index);
+	std::string getIdeas(int)const;
 };
 
 #endif // !BRAIN_HPP_

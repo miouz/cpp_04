@@ -36,3 +36,13 @@ void Cat::makeSound() const
 	std::cout << "Miaou Miaou\n";
 }
 
+void Cat::setBrain(Brain* const brain)
+{
+	brain_ = brain;
+}
+
+Brain* Cat::getBrain()const
+{
+	return brain_;
+}
+

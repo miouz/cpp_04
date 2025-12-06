@@ -14,6 +14,9 @@ class Dog : public Animal
 	Dog(const Dog& other);
 	Dog& operator=(const Dog&other);
 
+	void setBrain(Brain* const brain);
+	Brain* getBrain()const;
+
 	void makeSound() const;
 };
 #endif // !DOG_HPP

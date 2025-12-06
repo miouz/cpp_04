@@ -14,6 +14,9 @@ class Cat : public Animal
 	Cat(const Cat& other);
 	Cat& operator=(const Cat&other);
 
+	void setBrain(Brain* const brain);
+	Brain* getBrain()const;
+
 	void makeSound() const;
 };
 #endif // !CAT_HPP_

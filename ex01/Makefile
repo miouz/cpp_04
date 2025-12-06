@@ -6,7 +6,7 @@ NAME := animal
 
 MAKE_CMD ?= $(MAKE)
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -g -fsanitize=address
+CXXFLAGS := -Wall -Wextra -Werror -g 
 CXXFLAGS += -std=c++98
 
 # ============================================================================ #

@@ -38,3 +38,14 @@ void Dog::makeSound() const
 	std::cout << "Wouf Wouf\n";
 }
 
+
+void Dog::setBrain(Brain* const brain)
+{
+	brain_ = brain;
+}
+
+Brain* Dog::getBrain()const
+{
+	return brain_;
+}
+
