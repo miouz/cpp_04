@@ -1,5 +1,5 @@
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef DOG_HPP_
+# define DOG_HPP_
 
 #include "AAnimal.hpp"
 #include "Brain.hpp"
