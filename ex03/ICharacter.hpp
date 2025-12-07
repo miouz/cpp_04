@@ -1,7 +1,9 @@
 #ifndef ICHARACTER_HPP_
 #define ICHARACTER_HPP_
 
-#include "Interface.hpp"
+#include <string>
+class AMateria;
+
 class ICharacter
 {
 	public:

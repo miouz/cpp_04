@@ -1,6 +1,7 @@
 #ifndef INTERFACE_HPP_
 #define INTERFACE_HPP_
 
+#include <iostream>
 #include <string>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"

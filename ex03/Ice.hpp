@@ -1,7 +1,7 @@
 #ifndef ICE_HPP_
 #define ICE_HPP_
 
-#include "Interface.hpp"
+#include "AMateria.hpp"
 
 class Ice: public AMateria
 {
@@ -11,7 +11,7 @@ class Ice: public AMateria
 	Ice(const Ice& other);
 	Ice& operator=(const Ice& other);
 
-	AMateria* clone() const = 0;
+	AMateria* clone() const;
 	void use(ICharacter& target);
 };
 
