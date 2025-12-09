@@ -67,15 +67,61 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	
+	if (m == NULL)
+	{
+		std::cerr << " try to equip an empty AMateria\n";
+		return ;
+	}
+	for (int i = 0; i < SLOT_MAX; i++)
+	{
+		if (inventory_[i] == NULL)
+		{
+			inventory_[i] = m;
+			std::cout << name_ << " equiped successfully at index " << i << "of inventory slot\n";
+			return ;
+		}	
+	}
+	std::cerr << name_ << "'s inventory is full, can't equipe more\n";
 }
 
 void Character::unequip(int idx)
 {
-
+	if (idx >= SLOT_MAX || idx < 0)
+	{
+		std::cerr << "index out of inventory range\n";
+		return ;
+	}
+	if (inventory_[idx] == NULL)
+	{
+		std::cerr << "inventory at " << idx << " slot is empty, nothing to unequip\n";
+		return ;
+	}
+	inventory_[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
+	if (idx >= SLOT_MAX || idx < 0)
+	{
+		std::cerr << "index out of inventory range\n";
+		return ;
+	}
+	if (inventory_[idx] == NULL)
+	{
+		std::cerr << "inventory at " << idx << " slot is empty, nothing to use\n";
+		return ;
+	}
+	std::cout << name_;
+	inventory_[idx]->use(target);
+	delete inventory_[idx];
+}
 
+AMateria* const Character::getInventory(int index) const
+{
+	if (index < 0 || index >= SLOT_MAX)
+	{
+		std::cerr << "index out of inventory's range\n";
+		return NULL;
+	}
+	return inventory_[index];
 }
