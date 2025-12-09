@@ -111,7 +111,6 @@ void Character::use(int idx, ICharacter& target)
 		std::cerr << "inventory at " << idx << " slot is empty, nothing to use\n";
 		return ;
 	}
-	std::cout << name_;
 	inventory_[idx]->use(target);
 	delete inventory_[idx];
 }
