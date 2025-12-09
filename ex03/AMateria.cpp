@@ -1,4 +1,5 @@
-#include "Interface.hpp"
+#include "AMateria.hpp"
+#include <iostream>
 
 AMateria::AMateria():
 type_(""){

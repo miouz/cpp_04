@@ -1,4 +1,7 @@
-#include "Interface.hpp"
+#include "Character.hpp"
+#include <iostream>
+#include "AMateria.hpp"
+
 
 Character::Character():
 	ICharacter()
@@ -112,10 +115,9 @@ void Character::use(int idx, ICharacter& target)
 		return ;
 	}
 	inventory_[idx]->use(target);
-	delete inventory_[idx];
 }
 
-AMateria* const Character::getInventory(int index) const
+const AMateria* Character::getInventory(int index) const
 {
 	if (index < 0 || index >= SLOT_MAX)
 	{

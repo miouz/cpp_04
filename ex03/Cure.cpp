@@ -1,4 +1,6 @@
-#include "Interface.hpp"
+#include "Cure.hpp"
+#include <iostream>
+#include "ICharacter.hpp"
 
 Cure::Cure():
  AMateria("cure"){
@@ -14,6 +16,7 @@ Cure::Cure(const Cure& other):
 	AMateria("cure")
 {
 	std::cout <<"Cure copy constructor called\n";
+	*this = other;
 }
 
 Cure& Cure::operator=(const Cure& other)

@@ -1,4 +1,6 @@
-#include "Interface.hpp"
+#include "Ice.hpp"
+#include <iostream>
+#include "ICharacter.hpp"
 
 Ice::Ice():
  AMateria("ice"){
@@ -14,6 +16,7 @@ Ice::Ice(const Ice& other):
 	AMateria("ice")
 {
 	std::cout <<"Ice copy constructor called\n";
+	*this = other;
 }
 
 Ice& Ice::operator=(const Ice& other)
