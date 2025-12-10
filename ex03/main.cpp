@@ -1,7 +1,17 @@
-#include "Interface.hpp"
+#include <iostream>
+#include <string>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include <iomanip>
 
 int main()
 {
+	std::cout << "==========test from subject==========\n";
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -17,5 +27,7 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+
+	std::cout << "==========test from mi==========\n";
 	return 0;
 }
