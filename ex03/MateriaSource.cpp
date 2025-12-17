@@ -27,10 +27,9 @@ MateriaSource::MateriaSource(const MateriaSource& other):
 	for (int i = 0; i < SLOT_MAX; i++)
 	{
 		if (other.inventory_[i])
-		{
-			delete this->inventory_[i];
 			this->inventory_[i] = other.inventory_[i]->clone();
-		}
+		else
+	  		inventory_[i] = NULL;
 	}
 }
 
@@ -86,7 +85,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	{
 		if (inventory_[i])
 		{
-			if (inventory_[i]->getType().compare(type))
+			if (inventory_[i]->getType() == type)
 				return inventory_[i]->clone();
 		}
 	}
