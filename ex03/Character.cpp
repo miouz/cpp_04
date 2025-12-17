@@ -39,10 +39,9 @@ Character::Character(const Character& other):
 	for (int i = 0; i < SLOT_MAX; i++)
 	{
 		if (other.inventory_[i])
-		{
-			delete this->inventory_[i];
 			this->inventory_[i] = other.inventory_[i]->clone();
-		}
+		else
+	  		this->inventory_[i] = NULL;
 	}
 }
 
@@ -56,7 +55,8 @@ Character& Character::operator=(const Character& other)
 	{
 		if (other.inventory_[i])
 		{
-			delete this->inventory_[i];
+			if (this->inventory_[i])
+				delete this->inventory_[i];
 			this->inventory_[i] = other.inventory_[i]->clone();
 		}
 	}
@@ -80,7 +80,7 @@ void Character::equip(AMateria* m)
 		if (inventory_[i] == NULL)
 		{
 			inventory_[i] = m;
-			std::cout << name_ << " equiped successfully at index " << i << "of inventory slot\n";
+			std::cout << name_ << " equiped " << m->getType() << " successfully at index " << i << " of inventory slot\n";
 			return ;
 		}	
 	}
@@ -99,6 +99,7 @@ void Character::unequip(int idx)
 		std::cerr << "inventory at " << idx << " slot is empty, nothing to unequip\n";
 		return ;
 	}
+	std::cout << name_ << " unequiped " << inventory_[idx]->getType() << " successfully at index " << idx << " of inventory slot\n";
 	inventory_[idx] = NULL;
 }
 
