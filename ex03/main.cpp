@@ -51,22 +51,23 @@ int main()
 	{
 		std::cout << verso->getName() << " has "<< verso->getInventory(i)->getType() << " at inventory index " <<i << " \n";
 	}
-	std::cout << "==========the battle begins, Gustave is ready==========\n";
+	std::cout << "\n==========the battle begins, Gustave is ready==========\n";
 	//test for index out of range
 	gustave->use(5, *randomBadGuy);
 
 	gustave->use(3, *randomBadGuy);
-	std::cout << "The ground is so slippery that Gustave falls and drops 3 items he has\n";
+	std::cout << "\nThe ground is so slippery that Gustave falls and drops 3 items he has\n";
 	//test for index out of range
 	gustave->unequip(4);
 
 	gustave->unequip(3);
 	gustave->unequip(2);
 	gustave->unequip(1);
-	std::cout << "Gustave decides to use the only badCure he has\n";
+	std::cout << "\nGustave decides to use the only badCure he has\n";
 	gustave->use(0, *gustave);
-	std::cout << "Gustave failed\n";
+	std::cout << "\nGustave's hand shakes and drops the only item he has\n";
 	gustave->unequip(0);
+	std::cout << "\nGoodbye Gustave\n";
 	delete[] goodIce;
 	delete[] badCure;
 	delete randomBadGuy;
