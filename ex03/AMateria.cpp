@@ -3,27 +3,27 @@
 
 AMateria::AMateria():
 type_(""){
-	std::cout << "AMateria default constructor called\n";
+	// std::cout << "AMateria default constructor called\n";
 }
 
 AMateria::AMateria(const std::string& type):
 type_(type){
-	std::cout << "AMateria constructor called\n";
+	// std::cout << "AMateria constructor called\n";
 }
 
 AMateria::~AMateria(){
-	std::cout << "AMateria destructor called\n";
+	// std::cout << "AMateria destructor called\n";
 }
 
 AMateria::AMateria(const AMateria& other)
 {
-	std::cout << "AMateria copy constructor called\n";
+	// std::cout << "AMateria copy constructor called\n";
 	this->type_ = other.type_;
 }
 
 AMateria& AMateria::operator=(const AMateria& other)
 {
-	std::cout << "AMateria copy assignment operator called\n";
+	// std::cout << "AMateria copy assignment operator called\n";
 	if (this == &other)
 		return (*this);
 	this->type_ = other.type_;
@@ -38,5 +38,5 @@ std::string const & AMateria::getType() const
 void AMateria::use(ICharacter& target)
 {
 	(void)target;
-	std::cout << "AMateria use function is called\n";
+	// std::cout << "AMateria use function is called\n";
 }

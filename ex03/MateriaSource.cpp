@@ -5,14 +5,14 @@
 MateriaSource::MateriaSource():
 	IMateriaSource()
 {
-	std::cout << "MateriaSource default constructor called\n";
+	// std::cout << "MateriaSource default constructor called\n";
 	for(int i = 0; i < SLOT_MAX; i++)
 		inventory_[i] = NULL;
 }
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "MateriaSource destructor called\n";
+	// std::cout << "MateriaSource destructor called\n";
 	for(int i = 0; i < SLOT_MAX; i++)
 	{
 		delete inventory_[i];
@@ -23,7 +23,7 @@ MateriaSource::~MateriaSource()
 MateriaSource::MateriaSource(const MateriaSource& other):
 	IMateriaSource()
 {
-	std::cout << "MateriaSource copy constructor called\n";
+	// std::cout << "MateriaSource copy constructor called\n";
 	for (int i = 0; i < SLOT_MAX; i++)
 	{
 		if (other.inventory_[i])
@@ -36,7 +36,7 @@ MateriaSource::MateriaSource(const MateriaSource& other):
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 {
-	std::cout << "MateriaSource copy assignment called\n";
+	// std::cout << "MateriaSource copy assignment called\n";
 	if (this == &other)
 		return *this;
 	for (int i = 0; i < SLOT_MAX; i++)
