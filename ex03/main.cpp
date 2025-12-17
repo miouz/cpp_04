@@ -55,7 +55,7 @@ int main()
 	//test for index out of range
 	gustave->use(5, *randomBadGuy);
 
-	gustave->use(4, *randomBadGuy);
+	gustave->use(3, *randomBadGuy);
 	std::cout << "The ground is so slippery that Gustave falls and drops 3 items he has\n";
 	//test for index out of range
 	gustave->unequip(4);
