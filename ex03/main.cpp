@@ -29,5 +29,48 @@ int main()
 	delete src;
 
 	std::cout << "==========test from mi==========\n";
+	std::cout << "==========creat a character, equipe with 5 objects and deep copy it==========\n";
+	Character* gustave = new Character("Gustave");
+	Character* randomBadGuy = new Character("RandomBadGuy");
+	AMateria* goodIce = new Ice[5];
+	AMateria* badCure = new Cure[5];
+	AMateria* scam = NULL;
+
+	//test for equipe empty materia
+	randomBadGuy->equip(scam);
+
+	for(int i = 0; i < 5; i++)
+	{
+		if (i < 3)
+			gustave->equip(&badCure[i]);
+		else
+		 	gustave->equip(&goodIce[i]);
+	}
+	Character* verso = new Character(*gustave);
+	for(int i = 0; i < SLOT_MAX; i++)
+	{
+		std::cout << verso->getName() << " has "<< verso->getInventory(i)->getType() << " at inventory index " <<i << " \n";
+	}
+	std::cout << "==========the battle begins, Gustave is ready==========\n";
+	//test for index out of range
+	gustave->use(5, *randomBadGuy);
+
+	gustave->use(4, *randomBadGuy);
+	std::cout << "The ground is so slippery that Gustave falls and drops 3 items he has\n";
+	//test for index out of range
+	gustave->unequip(4);
+
+	gustave->unequip(3);
+	gustave->unequip(2);
+	gustave->unequip(1);
+	std::cout << "Gustave decides to use the only badCure he has\n";
+	gustave->use(0, *gustave);
+	std::cout << "Gustave failed\n";
+	gustave->unequip(0);
+	delete[] goodIce;
+	delete[] badCure;
+	delete randomBadGuy;
+	delete gustave;
+	delete verso;
 	return 0;
 }
