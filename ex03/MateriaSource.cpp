@@ -72,7 +72,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		if (inventory_[i] == NULL)
 		{
 			inventory_[i] = m->clone();
-			std::cout << m->getType()<< " is learned successfully at index " << i << "of inventory slot\n";
+			std::cout << m->getType()<< " is learned successfully at index " << i << " of inventory slot\n";
 			delete m;
 			return ;
 		}	
